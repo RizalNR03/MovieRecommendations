@@ -81,7 +81,7 @@ def movie_recommendation_page():
 
     default_value = "" if st.session_state.reset_triggered else st.session_state.movie_input
 
-    new_input = st.text_input("🔍 Enter your favorite movie:", value=default_value, key="movie_input")
+    new_input = st.text_input("🔍 Masukan Film Favorit Kamu:", value=default_value, key="movie_input")
 
     if new_input != st.session_state.movie_input:
         st.session_state.movie_input = new_input
@@ -110,7 +110,7 @@ def movie_recommendation_page():
             )
         display_recommendations(st.session_state.recommendations)
 
-    if col2.button('Surprise Me!', key='btn_surprise_me'):
+    if col2.button('Berikan Aku Saran!', key='btn_surprise_me'):
         st.session_state.recommendations = []
         st.session_state.potential_matches = []
         st.session_state.reset_triggered = True
